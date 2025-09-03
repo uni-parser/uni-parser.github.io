@@ -23,7 +23,19 @@ export default defineConfig({
       ],
     }),
   ],
-  base:'/academic-project-page-template-vue',
+  base: './',
+  server: {
+    watch: {
+      ignored: [
+        '**/node_modules/**',
+        '**/public/image_slider/**', // Exclude image slider directories with many files
+        '**/public/model3d/**', // Exclude 3D model directories
+        '**/*.png', // Exclude PNG files that might be large
+        '**/*.jpg', // Exclude JPG files
+        '**/*.jpeg', // Exclude JPEG files
+      ]
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

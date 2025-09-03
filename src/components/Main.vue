@@ -1,61 +1,63 @@
 <script>
 import Title from './sections/Title.vue'
-import Abstract from './sections/Abstract.vue'
-import Markdown from './sections/Markdown.vue'
-import BibTeX from './sections/BibTeX.vue'
-import Carousel from './sections/Carousel.vue'
-import Video from './sections/Video.vue'
-import ImageSlider from './sections/ImageSlider.vue'
-import ImageSliderInner from './sections/ImageSliderInner.vue'
-import ImageSelector from './sections/ImageSelector.vue'
-import Echart from './sections/Echart.vue'
-import Table from './sections/Table.vue'
-import Collapse from './sections/Collapse.vue'
-import SeletionForComparison from './sections/SeletionForComparison.vue'
-import Comment from './sections/Comment.vue'
-import Latex from './sections/Latex.vue'
-import Model3D from './sections/Model3D.vue'
-import GaussianSplats3D from './sections/GaussianSplats3D.vue'
+import Hero from './sections/Hero.vue'
+import CoreFeatures from './sections/CoreFeatures.vue'
+import DownstreamApps from './sections/DownstreamApps.vue'
+import Partners from './sections/Partners.vue'
+import CustomFooter from './sections/CustomFooter.vue'
 
 export default {
   components: {
     Title,
-    Abstract,
-    Markdown,
-    BibTeX,
-    Carousel,
-    Video,
-    ImageSlider,
-    ImageSliderInner,
-    ImageSelector,
-    Echart,
-    Collapse,
-    Table,
-    SeletionForComparison,
-    Comment,
-    Latex,
-    Model3D,
-    GaussianSplats3D
+    Hero,
+    CoreFeatures,
+    DownstreamApps,
+    Partners,
+    CustomFooter
   }
 }
 </script>
 
 <template>
-  <Title/>
-  <Carousel/>
-  <Video/>
-  <Abstract/>
-  <Markdown/>
-  <Latex/>
-  <Table/>
-  <Collapse/>
-  <Echart/>
-  <Model3D/>
-  <GaussianSplats3D/>
-  <SeletionForComparison/>
-  <ImageSliderInner/>
-  <ImageSlider/>
-  <ImageSelector/>
-  <BibTeX/>
-  <Comment/>
+  <div class="main-content">
+    <div v-reveal class="section-wrapper">
+      <Title/>
+    </div>
+    <Hero/>
+    <div v-reveal class="section-wrapper">
+      <CoreFeatures/>
+    </div>
+    <div v-reveal class="section-wrapper">
+      <DownstreamApps/>
+    </div>
+    <div v-reveal class="section-wrapper">
+      <Partners/>
+    </div>
+    <div v-reveal class="section-wrapper">
+      <CustomFooter/>
+    </div>
+  </div>
 </template>
+
+<style scoped>
+.main-content {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.section-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove any potential borders from sections */
+.section-wrapper > * {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
+}
+</style>
