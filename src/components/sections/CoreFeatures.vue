@@ -5,14 +5,17 @@ import { useI18n } from 'vue-i18n'
 import coreFnLd from '@/assets/images/core_fn_ld.jpeg'
 import coreFnTable from '@/assets/images/core_fn_table.jpeg'
 import coreFnMol from '@/assets/images/core_fn_mol.jpeg'
-import table_1_img from '@/assets/show_casing_imgs/table_1.webp'
-import table_2_img from '@/assets/show_casing_imgs/table_2.webp'
-import layout_1_img from '@/assets/show_casing_imgs/layout_1.webp'
-import layout_2_img from '@/assets/show_casing_imgs/layout_2.webp'
-import ocr_example from '@/assets/show_casing_imgs/ocr_example.webp'
-import table_example from '@/assets/show_casing_imgs/table_example.webp'
+import table_1_img from '@/assets/show_casing_imgs/table_01_v2_half.webp'
+import table_2_img from '@/assets/show_casing_imgs/table_02_v2_half.webp'
+import table_3_img from '@/assets/show_casing_imgs/table_03_v2_half.webp'
+import layout_1_img from '@/assets/show_casing_imgs/layout_01_half.webp'
+import layout_2_img from '@/assets/show_casing_imgs/layout_02_half.webp'
+import layout_3_img from '@/assets/show_casing_imgs/layout_03_half.webp'
+import mol_1 from '@/assets/show_casing_imgs/mol_1.webp'
+import mol_2 from '@/assets/show_casing_imgs/mol_2.webp'
+import mol_3 from '@/assets/show_casing_imgs/mol_3.webp'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const activeImageLayout = ref(0)
 const activeImageTable = ref(0)
@@ -36,6 +39,16 @@ const setActiveImage = (key, index) => {
   }
 }
 
+const formatTitle = (text) => {
+  if (!text) return ''
+  if (locale.value !== 'zh') return text
+  const chunks = []
+  for (let i = 0; i < text.length; i += 4) {
+    chunks.push(text.substring(i, i + 4))
+  }
+  return chunks.join('<br>')
+}
+
 const cards = [
   {
     key: 'layout',
@@ -44,7 +57,8 @@ const cards = [
     img: coreFnLd,
     showcaseImages: [
       layout_1_img,
-      layout_2_img
+      layout_2_img,
+      layout_3_img
     ]
   },
   {
@@ -54,7 +68,8 @@ const cards = [
     img: coreFnTable,
     showcaseImages: [
       table_1_img,
-      table_2_img
+      table_2_img,
+      table_3_img
     ]
   },
   {
@@ -63,8 +78,9 @@ const cards = [
     desc: 'core_features.molecule_desc',
     img: coreFnMol,
     showcaseImages: [
-      ocr_example,
-      table_example
+      mol_1,
+      mol_2,
+      mol_3
     ]
   }
 ]
@@ -78,7 +94,7 @@ const cards = [
         <div class="core__card-container">
           <el-card shadow="hover" class="core__card">
             <img :src="c.img" :alt="t(c.title)" class="core__img" />
-            <h3>{{ t(c.title) }}</h3>
+            <h3 v-html="formatTitle(t(c.title))"></h3>
             <!-- <p>{{ t(c.desc) }}</p> -->
           </el-card>
         </div>
@@ -145,13 +161,21 @@ const cards = [
   display: flex;
   gap: 0rem;
   align-items: flex-start;
-  min-height: 500px;
+  min-height: 400px;
   margin-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+  .core__feature-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: auto;
+  }
+}
+
 .core__card-container {
-  flex: 0 0 380px;
-  max-width: 180px;
+  flex: 0 0 180px;
+  max-width: 200px;
 }
 
 .core__card {
@@ -164,15 +188,18 @@ const cards = [
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  padding: 1.25rem 1rem;
 }
 
 .core__card h3 {
   font-family: 'DingTalk Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 0rem;
   font-weight: 600;
   color: #667eea;
   transition: color 0.3s ease;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .core__card:hover h3 {
@@ -202,7 +229,7 @@ const cards = [
 
 :deep(.el-card__body) {
   padding: 0rem !important;
-  max-width: 160px;
+  max-width: 100%;
   margin: 0 auto;
 }
 

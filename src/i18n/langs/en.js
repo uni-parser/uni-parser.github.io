@@ -3,12 +3,13 @@ import { partnerImages } from '../imagePaths';
 export default {
   header: {
     home: 'Home',
+    api_tools: 'API Tools',
     core: 'Core Features',
     report: 'Technical Report',
     demo: 'Demo',
     applications: 'Downstream Apps',
     partners: 'Partners',
-    language: 'Language',
+    language: '语言',
     chinese: '中文',
     english: 'EN'
   },
@@ -68,25 +69,25 @@ export default {
     showcase_placeholder: 'Real Example Showcase'
   },
   custom_footer: {
-    friendly_links: 'Friendly Links',
+    friendly_links: 'Friend Links',
     email_contact: 'Email Contact',
     commercial_contact: 'Commercial Contact',
     academic_contact: 'Academic Contact',
     legal_declaration: 'Legal Declaration',
     user_agreement: 'User Agreement',
     privacy_agreement: 'Privacy Agreement',
-    join_community: 'Join WeChat group Community:'
+    join_community: 'Join WeChat group Community'
   },
   downstream_apps: {
     title: 'Downstream Apps',
     extraction_title: 'Structured Information Extraction from Literature',
     extraction_items: {
       molecule_library: 'Molecule Library',
-      molecule_library_desc: 'Patent molecule library & literature molecule library; for molecule retrieval, property mining, and patent authentication',
+      molecule_library_desc: 'Patent molecule library & document molecule library; for molecule retrieval, property mining, and patent authentication',
       reaction_library: 'Reaction Library',
       reaction_library_desc: 'Build a reaction database to assist in the training of AI4S models for organic synthesis',
       structured_database: 'Structured Literature Database',
-      structured_database_desc: 'A literature-centered structured knowledge base',
+      structured_database_desc: 'A document-centered structured knowledge base',
       target_database: 'Target/Activity/Spectrum Database',
       target_database_desc: 'Construction of multiple types of professional databases',
       experiment_extraction: 'Experiment Information Extraction',
@@ -113,13 +114,14 @@ export default {
     features: [
       'Ultra-fast parsing speed: as low as 0.05s/page',
       'Ultra-high parsing accuracy: significant lead in table, molecule, and other parsing capabilities',
-      'Large-scale parsing support: no local deployment required, supports batch parsing of hundreds of millions of literature and patent PDF files',
+      'Large-scale parsing support: no local deployment required, supports batch parsing of hundreds of millions of document and patent PDF files',
       'Domain-versatile: supports various complex layouts of journals, conferences, reports, and patents in all fields',
       'Multi-modal support: table, formula, chart, molecular structure, and chemical reaction parsing',
-      'Downstream-task friendly: supports literature reading, patent authentication, database construction, and large model training data production'
+      'Downstream-task friendly: supports document reading, patent authentication, database construction, and large model training data production'
     ],
-    join_waiting_list_zh: 'Join Waiting List (中文)',
-    join_waiting_list_en: 'Join Waiting List (EN)',
+    tools_description: 'No need for local deployment, use online tools for document parsing',
+    join_waiting_list_zh: 'Join Waiting List',
+    join_waiting_list_en: 'Join Waiting List',
     dialog_title: 'Join Waiting List',
     form: {
       name: 'Name',

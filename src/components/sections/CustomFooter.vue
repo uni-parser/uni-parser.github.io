@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const links = [
+  { name: '深势科技', link: 'https://www.dp.tech/' },
   { name: 'OCSR Demo', link: 'https://ocsr.dp.tech/' },
   { name: '玻尔科研工作站', link: 'https://www.bohrium.com/' },
   { name: 'Uni-Finder', link: 'https://uni-finder.dp.tech/chat' },
@@ -19,7 +20,7 @@ const links = [
         <h2 class="section-title">{{ t('custom_footer.friendly_links') }}</h2>
         <ul class="links-list">
           <li v-for="link in links" :key="link.name" class="link-item">
-            <a :href="link.link" class="link">{{ link.name }}</a>
+            <a :href="link.link" class="link" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>
           </li>
         </ul>
       </div>
@@ -29,12 +30,12 @@ const links = [
       <!-- Footer Content -->
       <div class="footer-content">
         <!-- Contact Section -->
+        <div class="logo-container">
+          <img src="/src/assets/small_images/project_logo_v3.png" alt="Project Logo" class="project-logo" />
+        </div>
         <div class="contact-section">
-          <div class="logo-container">
-            <img src="/src/assets/small_images/project_logo_v3.png" alt="Project Logo" class="project-logo" />
-          </div>
           <div class="contact-info">
-            <p class="contact-text">{{ t('custom_footer.email_contact') }}:</p>
+            <p class="contact-text">{{ t('custom_footer.email_contact') }}</p>
             <a href="mailto:bd@dp.tech" class="email-link">{{ t('custom_footer.commercial_contact') }}: bd@dp.tech</a>
             <a href="mailto:fangxi@dp.tech" class="email-link">{{ t('custom_footer.academic_contact') }}: fangxi@dp.tech</a>
           </div>
@@ -63,7 +64,7 @@ const links = [
 
 <style scoped>
 .footer {
-  padding: 48px 8rem;
+  padding: 4rem 10%;
   background: #ffffff;
 }
 
@@ -71,30 +72,23 @@ const links = [
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 12px;
+  border: none;
 }
 
 /* Responsive padding for different screen sizes */
-@media (min-width: 1400px) {
+@media (max-width: 1400px) {
   .footer {
-    padding: 48px 10rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .footer {
-    padding: 48px 6rem;
+    padding: 3rem 5%;
   }
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 48px 4rem;
+    padding: 2rem 1rem;
   }
-}
-
-@media (max-width: 480px) {
-  .footer {
-    padding: 48px 2rem;
+  
+  .footer-card {
+    padding: 0;
   }
 }
 
@@ -126,7 +120,7 @@ const links = [
 
 .link {
   font-size: 18px;
-  color: #007bff;
+  color: #000000;
   text-decoration: none;
   font-family: 'DingTalk Sans', sans-serif;
   transition: color 0.3s ease;
@@ -142,15 +136,16 @@ const links = [
 
 /* Footer Content */
 .footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1.5fr 1fr;
-  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
   align-items: start;
+  gap: 40px;
 }
 
 @media (max-width: 992px) {
   .footer-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     gap: 32px;
   }
 }
@@ -164,6 +159,13 @@ const links = [
 
 .logo-container {
   flex-shrink: 0;
+  margin-right: auto;
+}
+
+@media (max-width: 992px) {
+  .logo-container {
+    margin-right: 0;
+  }
 }
 
 .project-logo {
@@ -188,8 +190,8 @@ const links = [
 }
 
 .email-link {
-  font-size: 18px;
-  color: #007bff;
+  font-size: 14px;
+  color: #000000;
   text-decoration: none;
   font-family: 'DingTalk Sans', sans-serif;
   font-weight: 550;
@@ -204,7 +206,7 @@ const links = [
 .legal-section {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 4px;
 }
 
 .legal-title {
@@ -225,12 +227,12 @@ const links = [
 }
 
 .legal-link {
-  font-size: 16px;
-  color: #666;
+  font-size: 14px;
+  color: #000000;
   text-decoration: none;
   font-family: 'DingTalk Sans', sans-serif;
   transition: color 0.3s ease;
-  padding: 4px 0;
+  /* padding: 4px 0; */
 }
 
 .legal-link:hover {
@@ -240,7 +242,6 @@ const links = [
 /* Community Section */
 .community-section {
   display: flex;
-  justify-content: center;
 }
 
 .community-content {

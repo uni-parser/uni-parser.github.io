@@ -3,12 +3,13 @@ import { partnerImages } from '../imagePaths';
 export default {
   header: {
     home: '首页',
+    api_tools: 'API工具',
     core: '核心功能',
     report: '技术报告',
-    demo: 'Demo',
+    demo: '演示',
     applications: '下游应用',
     partners: '合作',
-    language: '语言',
+    language: 'Language',
     chinese: '中文',
     english: 'EN'
   },
@@ -75,7 +76,7 @@ export default {
     legal_declaration: '法律声明',
     user_agreement: '用户协议',
     privacy_agreement: '隐私协议',
-    join_community: '加入微信社群：'
+    join_community: '加入微信社群'
   },
   downstream_apps: {
     title: '下游应用',
@@ -118,8 +119,9 @@ export default {
       '多模态支持：表格、公式、图表、分子结构式和化学反应式解析',
       '下游任务友好：支持文献阅读、专利鉴权、数据库构建与大模型训练数据生产'
     ],
-    join_waiting_list_zh: '加入 Waiting List (中文)',
-    join_waiting_list_en: 'Join Waiting List (EN)',
+    tools_description: '无需本地部署，使用在线文献解析工具包',
+    join_waiting_list_zh: '加入 Waiting List',
+    join_waiting_list_en: 'Join Waiting List',
     dialog_title: '加入 Waiting List',
     form: {
       name: '姓名',

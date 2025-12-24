@@ -412,34 +412,53 @@ a {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .title-authors,
-  .title-addresses {
-    gap: 0.25rem;
+  .title-section {
+    padding: 2rem 1rem;
   }
 
-  .title-button, .guidance-button {
-    margin: 0.5rem 0.25rem;
-    padding: 0.5rem 1rem;
+  .title-authors,
+  .title-addresses {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .title-button {
+    margin: 0.25rem;
+    padding: 0.4rem 0.75rem;
+    height: auto;
+    width: auto;
+  }
+
+  .el-button :deep(.el-avatar) {
+    width: 32px !important;
+    height: 32px !important;
+    margin-right: 0.5rem;
   }
 
   .paper-title {
-    font-size: 2.0rem;
+    font-size: 1.75rem;
     margin: 1rem 0;
+    padding: 0 0.5rem;
   }
 
   .author, .address {
-    font-size: 0.9rem;
-  }
-
-  .logo {
-    width: 120px;
-    height: 120px;
-    margin-top: 1rem;
+    font-size: 0.85rem;
   }
 
   .logo_in_title {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .paper-title {
+    font-size: 1.5rem;
+  }
+  
+  .title-button {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 

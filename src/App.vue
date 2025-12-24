@@ -71,11 +71,17 @@ p, li {
   padding: 0;
   border: none !important;
   box-shadow: none !important;
+  width: 100%;
+}
+
+.el-main {
+  overflow-x: hidden;
 }
 
 .el-container {
   border: none !important;
   box-shadow: none !important;
+  width: 100%;
 }
 
 /* Modern code styling - borderless */

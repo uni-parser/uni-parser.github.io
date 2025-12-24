@@ -39,11 +39,17 @@ const items = computed(() => tm('partners.items') || [])
 
 <style scoped>
 .partners {
-  padding: 4rem 0rem;
+  padding: 4rem 1rem;
   background: #ffffff;
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .partners {
+    padding: 3rem 1rem;
+  }
 }
 
 .partners__header {

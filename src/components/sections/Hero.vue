@@ -20,6 +20,11 @@ function openForm(lang) {
   window.open(externalApplicationFormLink, '_blank')
 }
 
+const uniParserToolsLink = 'https://uniparser.dp.tech/'
+function openUniParserTools() {
+  window.open(uniParserToolsLink, '_blank')
+}
+
 </script>
 
 <template>
@@ -30,32 +35,42 @@ function openForm(lang) {
         <ul>
           <li v-for="(feature, index) in features" :key="index" v-reveal>{{ feature }}</li>
         </ul>
-        <div class="hero__cta">
-          <el-button class="hover-lift" type="primary" size="large" v-tilt @click="openForm('zh')">{{ t('hero.join_waiting_list_zh') }}</el-button>
-          <el-button size="large" @click="openForm('en')">Join Waiting List (EN)</el-button>
-        </div>
       </div>
       <div class="hero__image">
-        <img src="/src/assets/small_images/project_page_showcase.png" alt="Hero" />
+        <video autoplay loop muted playsinline class="hero__video">
+          <source src="/src/assets/videos/project_page_showcase.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
+    <div class="hero__image", style="margin-top: 2rem; margin-left: 0rem; margin-bottom: 2rem;">
+      <h3 style="margin-top: 2rem; text-align: left; font-size: 1.25rem; font-weight: bold;">
+      <el-button v-if="locale === 'zh'" class="hover-lift" style="margin-right: 1rem;" size="large" v-tilt @click="openForm('zh')">{{ t('hero.join_waiting_list_zh') }}</el-button>
+      <el-button v-if="locale === 'en'" class="hover-lift" style="margin-right: 1rem;" size="large" v-tilt @click="openForm('en')">{{ t('hero.join_waiting_list_en') }}</el-button>
+        {{ t('hero.tools_description') }} <span style="color: rgba(66, 126, 234, 1.0); text-decoration: underline; cursor: pointer;" @click="openUniParserTools()"> Uni-Parser Tools </span>(Coming Soon)</h3>
+    </div>
 
+    <!-- <div class="hero__cta">
+      <el-button v-if="locale === 'zh'" class="hover-lift" size="middle" v-tilt @click="openForm('zh')">{{ t('hero.join_waiting_list_zh') }}</el-button>
+      <el-button v-if="locale === 'en'" class="hover-lift" size="middle" v-tilt @click="openForm('en')">{{ t('hero.join_waiting_list_en') }}</el-button>
+    </div> -->
   </section>
 </template>
 
 <style scoped>
 .hero {
-  padding: 4rem 0rem;
+  padding: 0rem 0rem;
   background: #ffffff;
   position: relative;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .hero__content {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 1rem;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -79,9 +94,9 @@ function openForm(lang) {
 }
 
 .hero__text ul li {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: 'DingTalk Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  margin: 0.75rem 0;
+  margin: 1rem 0;
   padding-left: 1.5rem;
   position: relative;
   color: #555;
@@ -100,68 +115,46 @@ function openForm(lang) {
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
-.hero__cta .el-button {
-  padding: 0.875rem 2rem;
+.hero__image .el-button {
+  /* padding: 0.875rem 2rem; */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 1.25rem;
   transition: all 0.3s ease;
   border: none;
-}
-
-.hero__cta .el-button:first-child {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.hero__cta .el-button:first-child:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
-}
-
-.hero__cta .el-button:last-child {
-  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-  color: #667eea;
-  border: none;
+  color: #ffffff;
+  /* text-decoration: underline; */
 }
 
-.hero__cta .el-button:last-child:hover {
-  background: rgba(255, 255, 255, 1);
+.hero__image .el-button:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  border: none;
 }
 
 .hero__image {
   position: relative;
 }
 
-.hero__image img {
+.hero__image video {
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   filter: brightness(1.02);
 }
 
-.hero__image img:hover {
+.hero__image video:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsive design */
-@media (max-width: 1024px) {
-  .hero__content {
-    gap: 3rem;
-  }
-
-  .hero__text h1 {
-    font-size: 2.2rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -185,8 +178,9 @@ function openForm(lang) {
     justify-content: center;
   }
 
-  .hero__image img {
-    max-width: 400px;
+  .hero__image video {
+    max-width: 600px;
+    width: 100%;
     margin: 0 auto;
     display: block;
   }
