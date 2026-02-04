@@ -9,8 +9,10 @@ import iconTaohaoyi from '@/assets/small_images/icon_taohaoyi.png'
 import iconYangsw from '@/assets/small_images/icon_yangsw.png'
 import iconZhongsuyang from '@/assets/small_images/icon_zhongsuyang.png'
 import iconLuhaocheng from '@/assets/small_images/icon_luhaocheng.png'
-import iconLvhan from '@/assets/small_images/icon_lvhan.png'
+import iconLvhan from '@/assets/small_images/icon_lvhan.jpeg'
 import iconHuangchaozheng from '@/assets/small_images/icon_huangchaozheng.jpeg'
+import iconKeguolin from '@/assets/small_images/icon_keguolin.png'
+import iconWangjunjie from '@/assets/small_images/icon_wangjunjie.png'
 import blueImg from '@/assets/small_images/icon_blue.png'
 
 const { t } = useI18n()
@@ -33,59 +35,76 @@ const title_supp_color = '#42B883'
 // 按钮颜色
 const btn_color = '#444444'
 
-// 作者清单（包含作者姓名、头像、主页、地址序号）
+// 作者清单
 const authors = [
   {
-    name: "fangxi",
+    name: "Xi Fang",
     icon: iconFangxi,
     homepage: "fangxi@dp.tech",
-    address_flag: "1,#"
+    address_flag: "1"
   },
   {
-    name: "taohaoyi",
+    name: "Haoyi Tao",
     icon: iconTaohaoyi,
     homepage: "taohaoyi@dp.tech",
-    address_flag: "1,#"
+    address_flag: "1"
   },
   {
-    name: "yangsw",
+    name: "Shuwen Yang",
     icon: iconYangsw,
     homepage: "yangsw@dp.tech",
-    address_flag: "1,#"
-  },
-]
-
-// 地址清单（包含地址名称、头像、主页、地址序号）
-const addresses = [
-  {
-    name: "zhongsuyang",
-    icon: iconZhongsuyang,
-    homepage: "zhongsuyang@dp.tech",
-    address_flag: "1,#"
+    address_flag: "1"
   },
   {
-    name: "luhaocheng",
-    icon: iconLuhaocheng,
-    homepage: "luhaocheng@dp.tech",
-    address_flag: "1,#"
-  },
-  {
-    name: "lvhan",
-    icon: iconLvhan,
-    homepage: "lvhan@dp.tech",
-    address_flag: "1,#"
-  },
-  {
-    name: "huangchaozheng",
+    name: "Chaozheng Huang",
     icon: iconHuangchaozheng,
     homepage: "huangchaozheng@dp.tech",
-    address_flag: "1,#"
+    address_flag: "1"
+  },
+  {
+    name: "Junjie Wang",
+    icon: iconWangjunjie,
+    homepage: "wangjunjie@dp.tech",
+    address_flag: "1"
   },
 ]
 
-// // 共一和通讯提示
-// const con_and_corresponding_author = 
-//   "#: Equal Contribution. *: Corresponding Author."
+// 作者清单
+const authors2 = [
+  {
+    name: "Suyang Zhong",
+    icon: iconZhongsuyang,
+    homepage: "zhongsuyang@dp.tech",
+    address_flag: "1"
+  },
+  {
+    name: "Haocheng Lu",
+    icon: iconLuhaocheng,
+    homepage: "luhaocheng@dp.tech",
+    address_flag: "1"
+  },
+  {
+    name: "Han Lv",
+    icon: iconLvhan,
+    homepage: "lvhan@dp.tech",
+    address_flag: "1"
+  },
+  {
+    name: "Guolin Ke",
+    icon: iconKeguolin,
+    homepage: "kegl@dp.tech",
+    address_flag: "1,*"
+  },
+]
+
+// 单位
+const affiliations = [
+  "1: DP Technology",
+]
+
+// 共一和通讯提示
+const con_and_corresponding_author = 
+  "*: Corresponding Contributor."
 
 // // 最新消息
 // const news = "🔥 [2025-10-27] Uni-Parser is in beta test!"
@@ -169,7 +188,7 @@ const buttons = [
     <div class="title-authors">
       <a :href="'mailto:' + author.homepage" v-for="author in authors" :key="author.name">
         <el-button class="title-button hover-lift" type="primary" text v-reveal="{ animation: 'fade-up' }" v-tilt>
-          <el-avatar v-if="author.icon" :size="40" :src="author.icon" />
+          <el-avatar v-if="author.icon" :size="32" :src="author.icon" />
           <span class="author">
             {{ t(author.name) }}<sup v-if="author.address_flag" class="name_sup">{{ author.address_flag }}</sup>
           </span>
@@ -177,13 +196,12 @@ const buttons = [
       </a>
     </div>
 
-    <!-- 地址名单 -->
-    <div class="title-addresses">
-      <a :href="'mailto:' + address.homepage" v-for="address in addresses" :key="address.name">
+    <div class="title-authors2">
+      <a :href="'mailto:' + address.homepage" v-for="address in authors2" :key="address.name">
         <el-button class="title-button hover-lift" type="primary" text v-reveal v-tilt>
-          <el-avatar v-if="address.icon" :size="40" :src="address.icon" />
+          <el-avatar v-if="address.icon" :size="32" :src="address.icon" />
           <span class="address">
-            <sup v-if="address.address_flag" class="address_sup">{{ address.address_flag }}</sup>{{ t(address.name) }}
+            {{ t(address.name) }}<sup v-if="address.address_flag" class="address_sup">{{ address.address_flag }}</sup>
           </span>
         </el-button>
       </a>
@@ -191,8 +209,17 @@ const buttons = [
 
     <!-- 共一和通讯提示内容 -->
     <div class="title-contribution" v-reveal>
-        {{ t('title.contribution') }}
+      <span v-for="(aff, index) in affiliations" :key="index">
+        <sup class="name_sup">{{ aff.split(':')[0] }}</sup>{{ aff.split(':')[1] }}<span v-if="index < affiliations.length - 1">, </span>
+      </span>
     </div>
+    <div class="title-contribution" v-reveal>
+      <span v-if="con_and_corresponding_author.includes(':')">
+        <sup class="name_sup">{{ con_and_corresponding_author.split(':')[0] }}</sup>{{ con_and_corresponding_author.split(':')[1] }}
+      </span>
+      <span v-else>{{ con_and_corresponding_author }}</span>
+    </div>
+
     <!-- 强调内容 -->
     <!-- <div class="title-emphasis" v-for="emphasis in emphases" :key="emphasis" v-reveal>
         {{ t(emphasis) }}
@@ -227,7 +254,7 @@ const buttons = [
 .paper-title {
   font-family: "MyFont", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   letter-spacing: 0.5px;
-  font-size: clamp(2.0rem, 4.0vw, 3.0rem);
+  font-size: clamp(2.0rem, 4.0vw, 3.5rem);
   margin: 1.5rem 0;
   text-align: center;
   line-height: 1.2;
@@ -241,14 +268,14 @@ const buttons = [
 
 /* Modern author and address buttons */
 .title-button {
-  margin: 0.75rem 0.5rem;
-  padding: 0.75rem 1.25rem;
-  border-radius: 12px;
+  margin: 0.25rem 0.25rem;
+  /* padding: 0.75rem 1.25rem; */
+  border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   border: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .title-button:hover {
@@ -276,7 +303,7 @@ const buttons = [
 
 /* Author and address text */
 .author, .address {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #333;
   margin-left: 0.5rem;
@@ -300,13 +327,13 @@ const buttons = [
 }
 
 /* Contribution and corresponding author text */
-.con-cor {
+.title-contribution {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 0.9rem;
-  margin: 2rem 0;
+  font-size: 1rem;
   text-align: center;
   color: #666;
   font-weight: 400;
+  margin: 0.5rem 0;
 }
 
 /* Emphasis styling */
@@ -333,8 +360,7 @@ const buttons = [
 .title-alert,
 .title-content,
 .title-authors,
-.title-addresses,
-.title-contribution {
+.title-authors2 {
   display: flex;
   justify-content: center;
   margin-bottom: 0.75rem;
@@ -345,14 +371,10 @@ const buttons = [
 }
 
 .title-authors,
-.title-addresses {
+.title-authors2 {
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.title-contribution {
-  margin: 1rem 0;
+  gap: 0.25rem;
 }
 
 /* Modern alert styling */
@@ -417,8 +439,8 @@ a {
   }
 
   .title-authors,
-  .title-addresses {
-    gap: 0.5rem;
+  .title-authors2 {
+    gap: 0.25rem;
     padding: 0 0.5rem;
   }
 
@@ -430,8 +452,8 @@ a {
   }
 
   .el-button :deep(.el-avatar) {
-    width: 32px !important;
-    height: 32px !important;
+    width: 28px !important;
+    height: 28px !important;
     margin-right: 0.5rem;
   }
 
