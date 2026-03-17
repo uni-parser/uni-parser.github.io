@@ -84,7 +84,7 @@ const authors2 = [
     address_flag: "1"
   },
   {
-    name: "Han Lv",
+    name: "Han Lyu",
     icon: iconLvhan,
     homepage: "lvhan@dp.tech",
     address_flag: "1"
