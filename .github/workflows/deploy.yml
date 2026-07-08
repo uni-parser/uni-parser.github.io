@@ -20,7 +20,7 @@ jobs:
       - name: Setup pnpm  # 先安装 pnpm
         uses: pnpm/action-setup@v4  # 使用最新 v4 版本
         with:
-          version: latest  # 自动使用最新版本
+          version: 10  # 约束 pnpm 大版本为 10.x，避免 latest 升级破坏部署
       
       - name: Setup Node.js  # 再设置 Node，这时 pnpm 已可用
         uses: actions/setup-node@v4

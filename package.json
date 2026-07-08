@@ -33,5 +33,12 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "twikoo": "^1.6.40",
     "vite": "^4.4.6"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "vue-demi",
+      "vue-echarts"
+    ]
   }
 }
