@@ -99,7 +99,7 @@ h1 {
   color: #333;
   margin-bottom: 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -191,7 +191,7 @@ h1 {
 
 .apps__card:hover img {
   transform: scale(1.08);
-  filter: drop-shadow(0 8px 20px rgba(102, 126, 234, 0.2));
+  filter: drop-shadow(0 8px 20px rgba(37, 99, 235, 0.2));
 }
 
 .apps__card h3 {
@@ -210,7 +210,7 @@ h1 {
 }
 
 .apps__card h3 a:hover {
-  color: #667eea;
+  color: #2563eb;
 }
 
 .apps__card p {

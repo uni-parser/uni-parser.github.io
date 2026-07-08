@@ -36,8 +36,7 @@ const links = [
         <div class="contact-section">
           <div class="contact-info">
             <p class="contact-text">{{ t('custom_footer.email_contact') }}</p>
-            <a href="mailto:bd@dp.tech" class="email-link">{{ t('custom_footer.commercial_contact') }}: bd@dp.tech</a>
-            <a href="mailto:fangxi@dp.tech" class="email-link">{{ t('custom_footer.academic_contact') }}: fangxi@dp.tech</a>
+            <a href="mailto:uniparser@dp.tech" class="email-link">uniparser@dp.tech</a>
           </div>
         </div>
 

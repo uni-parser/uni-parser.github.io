@@ -3,10 +3,10 @@ import { partnerImages } from '../imagePaths';
 export default {
   header: {
     home: '首页',
-    api_tools: 'API工具',
+    api_tools: 'UniParser-Tools',
     core: '核心功能',
     report: '技术报告',
-    demo: '演示',
+    demo: '服务主页',
     applications: '下游应用',
     partners: '合作',
     language: 'Language',
@@ -14,9 +14,10 @@ export default {
     english: 'EN'
   },
   title: {
-    news: '🎉 Uni-Parser开始内测！',
+    news: '🎉 Uni-Parser 已正式上线！',
+    news_link: '立即访问主页',
     emphases: [
-      '🎉 Uni-Parser开始内测',
+      '🎉 Uni-Parser 已正式上线',
       '🥰 欢迎关注Uni-Parser微信/B站/知乎/小红书'
     ],
     buttons: {
@@ -71,8 +72,6 @@ export default {
   custom_footer: {
     friendly_links: '友情链接',
     email_contact: '邮箱联系',
-    commercial_contact: '商业合作',
-    academic_contact: '学术合作',
     legal_declaration: '法律声明',
     user_agreement: '用户协议',
     privacy_agreement: '隐私协议',
@@ -120,9 +119,10 @@ export default {
       '下游任务友好：支持文献阅读、专利鉴权、数据库构建与大模型训练数据生产'
     ],
     tools_description: '无需本地部署，使用在线文献解析工具包',
-    join_waiting_list_zh: '加入 Waiting List',
-    join_waiting_list_en: 'Join Waiting List',
-    dialog_title: '加入 Waiting List',
+    visit_homepage: '访问主页',
+    visit_wrapper_tools: '访问 UniParser-Tools',
+    academic_cooperation: '学术合作',
+    dialog_title: '学术合作',
     form: {
       name: '姓名',
       name_placeholder: '请输入姓名',

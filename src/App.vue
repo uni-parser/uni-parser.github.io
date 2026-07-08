@@ -43,7 +43,7 @@ h1 {
   font-size: 3.5rem;
   line-height: 1.1;
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -113,10 +113,10 @@ pre code {
 
 /* Modern blockquote styling */
 blockquote {
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #2563eb;
   padding: 1.5rem 2rem;
   margin: 2rem 0;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(15, 23, 42, 0.04) 100%);
   border-radius: 0 8px 8px 0;
   position: relative;
 }
@@ -129,14 +129,14 @@ blockquote > p {
 
 /* Modern link styling */
 a {
-  color: #667eea;
+  color: #2563eb;
   text-decoration: none;
   transition: all 0.2s ease;
   position: relative;
 }
 
 a:hover {
-  color: #764ba2;
+  color: #1d4ed8;
   text-decoration: none;
 }
 
@@ -147,7 +147,7 @@ a:hover::after {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   border-radius: 1px;
 }
 
@@ -181,7 +181,7 @@ table {
 }
 
 thead {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #0f172a;
   color: white;
 }
 
@@ -198,7 +198,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background: rgba(102, 126, 234, 0.02);
+  background: rgba(37, 99, 235, 0.02);
 }
 
 tbody tr:last-child {

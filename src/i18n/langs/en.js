@@ -3,10 +3,10 @@ import { partnerImages } from '../imagePaths';
 export default {
   header: {
     home: 'Home',
-    api_tools: 'API Tools',
+    api_tools: 'UniParser-Tools',
     core: 'Core Features',
     report: 'Technical Report',
-    demo: 'Demo',
+    demo: 'Homepage',
     applications: 'Downstream Apps',
     partners: 'Partners',
     language: '语言',
@@ -14,9 +14,10 @@ export default {
     english: 'EN'
   },
   title: {
-    news: '🎉 Uni-Parser is in beta test !',
+    news: '🎉 Uni-Parser is now officially live!',
+    news_link: 'Visit the homepage',
     emphases: [
-      '🎉 Uni-Parser is in beta test',
+      '🎉 Uni-Parser is now officially live',
       '🥰 Welcome to follow Uni-Parser on WeChat/Bilibili/Zhihu/Xiaohongshu'
     ],
     buttons: {
@@ -71,8 +72,6 @@ export default {
   custom_footer: {
     friendly_links: 'Friend Links',
     email_contact: 'Email Contact',
-    commercial_contact: 'Commercial Contact',
-    academic_contact: 'Academic Contact',
     legal_declaration: 'Legal Declaration',
     user_agreement: 'User Agreement',
     privacy_agreement: 'Privacy Agreement',
@@ -120,9 +119,10 @@ export default {
       'Downstream-task friendly: supports document reading, patent authentication, database construction, and large model training data production'
     ],
     tools_description: 'No need for local deployment, use online tools for document parsing',
-    join_waiting_list_zh: 'Join Waiting List',
-    join_waiting_list_en: 'Join Waiting List',
-    dialog_title: 'Join Waiting List',
+    visit_homepage: 'Visit Homepage',
+    visit_wrapper_tools: 'Visit UniParser-Tools',
+    academic_cooperation: 'Academic Cooperation',
+    dialog_title: 'Academic Cooperation',
     form: {
       name: 'Name',
       name_placeholder: 'Please enter your name',

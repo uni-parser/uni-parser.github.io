@@ -63,7 +63,7 @@ const items = computed(() => tm('partners.items') || [])
   font-size: 2.5rem;
   font-weight: 700;
   margin: 2rem 0 1.5rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -154,7 +154,7 @@ const items = computed(() => tm('partners.items') || [])
 
 .partner-card:hover .partner-image {
   transform: scale(1.08);
-  filter: drop-shadow(0 8px 20px rgba(102, 126, 234, 0.2));
+  filter: drop-shadow(0 8px 20px rgba(37, 99, 235, 0.2));
 }
 
 .partner-text {
@@ -169,7 +169,7 @@ const items = computed(() => tm('partners.items') || [])
 }
 
 .partner-card:hover .partner-text {
-  color: #667eea;
+  color: #2563eb;
 }
 
 /* Responsive design */

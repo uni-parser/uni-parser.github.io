@@ -141,7 +141,7 @@ const cards = [
   margin-bottom: 3rem;
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -196,14 +196,14 @@ const cards = [
   font-size: 1.8rem;
   margin-bottom: 0rem;
   font-weight: 600;
-  color: #667eea;
+  color: #2563eb;
   transition: color 0.3s ease;
   line-height: 1.2;
   text-align: center;
 }
 
 .core__card:hover h3 {
-  color: #667eea;
+  color: #2563eb;
 }
 
 .core__card p {
@@ -292,12 +292,12 @@ const cards = [
 .core__showcase-image:hover {
   opacity: 0.9;
   transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
 }
 
 .core__showcase-image--active {
   opacity: 1;
-  box-shadow: 0 6px 18px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
 }
 
 .core__showcase-preview {

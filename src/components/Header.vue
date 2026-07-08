@@ -23,7 +23,7 @@ const nav = [
 const externalLinks = [
   { key: 'report', label: 'header.report', href: 'https://arxiv.org/abs/2512.15098' },
   { key: 'demo', label: 'header.demo', href: 'https://uniparser.dp.tech/' },
-  { key: 'api tools', label: 'header.api_tools', href: 'https://uniparser.dp.tech/' }
+  { key: 'api tools', label: 'header.api_tools', href: 'https://github.com/dptech-corp/UniParser-Tools' }
 ]
 
 // 语言切换
@@ -95,7 +95,7 @@ function changeLanguage(lang) {
     >
       <div class="mobile-nav">
         <div class="mobile-nav-header">
-          <el-icon :size="24" color="#667eea"><SuccessFilled /></el-icon>
+          <el-icon :size="24" color="#2563eb"><SuccessFilled /></el-icon>
           <span class="mobile-logo-text">{{ logo.name }}</span>
         </div>
         
@@ -168,12 +168,12 @@ function changeLanguage(lang) {
 
 .el-menu-item:hover {
 	background: rgba(0, 0, 0, 0.02) !important;
-	color: #667eea !important;
+	color: #2563eb !important;
 }
 
 .el-menu-item.is-active {
 	background: rgba(0, 0, 0, 0.03) !important;
-	color: #667eea !important;
+	color: #2563eb !important;
 	font-weight: 600;
 }
 
@@ -195,7 +195,7 @@ function changeLanguage(lang) {
 
 .el-sub-menu__title:hover {
 	background: rgba(0, 0, 0, 0.02) !important;
-	color: #667eea !important;
+	color: #2563eb !important;
 }
 
 /* Simple dropdown menu styling */
@@ -223,7 +223,7 @@ function changeLanguage(lang) {
 
 .el-menu--popup .el-menu-item:hover {
 	background: rgba(0, 0, 0, 0.02) !important;
-	color: #667eea !important;
+	color: #2563eb !important;
 }
 
 /* Header height and spacing */
@@ -236,12 +236,12 @@ function changeLanguage(lang) {
 .el-menu-item .el-icon {
 	font-size: 1.3rem;
 	margin-right: 0.5rem;
-	color: #667eea;
+	color: #2563eb;
 	transition: all 0.3s ease;
 }
 
 .el-menu-item:hover .el-icon {
-	color: #764ba2;
+	color: #1d4ed8;
 	transform: scale(1.1);
 }
 
@@ -298,7 +298,7 @@ function changeLanguage(lang) {
 .mobile-logo-text {
   font-size: 1.25rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -323,12 +323,12 @@ function changeLanguage(lang) {
 }
 
 .mobile-nav-link:hover {
-  background: rgba(102, 126, 234, 0.05);
-  color: #667eea;
+  background: rgba(37, 99, 235, 0.05);
+  color: #2563eb;
 }
 
 .mobile-nav-link.external {
-  color: #667eea;
+  color: #2563eb;
 }
 
 .mobile-nav-divider {
@@ -367,9 +367,9 @@ function changeLanguage(lang) {
 }
 
 .mobile-lang-option.active {
-  background: #667eea;
+  background: #2563eb;
   color: white;
-  border-color: #667eea;
+  border-color: #2563eb;
 }
 
 @media (max-width: 768px) {
@@ -400,8 +400,8 @@ function changeLanguage(lang) {
 /* 外部链接项样式 */
 .external-link-item {
   margin-left: 0.5rem !important;
-  background-color: rgba(102, 126, 234, 0.05) !important;
-  border: 0px solid rgba(102, 126, 234, 0.2) !important;
+  background-color: transparent !important;
+  border: 0px solid transparent !important;
   border-radius: 8px !important;
   height: 36px !important;
   line-height: 36px !important;
@@ -410,16 +410,13 @@ function changeLanguage(lang) {
 }
 
 .external-link-item:hover {
-  background-color: rgba(102, 126, 234, 0.1) !important;
-  /* border-color: rgba(102, 126, 234, 0.4) !important; */
-  border: 3px solid rgba(102, 126, 234, 0.2) !important;
-  /* transform: translateY(-1px); */
+  background-color: transparent !important;
 }
 
 .external-link-item a {
   display: flex;
   align-items: center;
-  color: #667eea !important;
+  color: #2563eb !important;
   font-weight: 600 !important;
   padding: 0 4px;
 }

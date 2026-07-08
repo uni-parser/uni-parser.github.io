@@ -7,22 +7,20 @@ const { t, locale, tm } = useI18n()
 
 const features = computed(() => tm('hero.features') || [])
 
-const waitingListLinks = {
-  zh: 'https://www.dp.tech/',
-  en: 'https://www.dp.tech/'
-}
-
 const externalApplicationFormLink = 'https://dptechnology.feishu.cn/share/base/form/shrcngJBcTILY4XdARDmZj0ppqh'
 
-function openForm(lang) {
-  // openedFromLang.value = lang
-  // dialogVisible.value = true
+function openForm() {
   window.open(externalApplicationFormLink, '_blank')
 }
 
-const uniParserToolsLink = 'https://uniparser.dp.tech/'
-function openUniParserTools() {
-  window.open(uniParserToolsLink, '_blank')
+const homepageLink = 'https://uniparser.dp.tech/'
+function openHomepage() {
+  window.open(homepageLink, '_blank')
+}
+
+const wrapperToolsLink = 'https://github.com/dptech-corp/UniParser-Tools'
+function openWrapperTools() {
+  window.open(wrapperToolsLink, '_blank')
 }
 
 </script>
@@ -43,17 +41,11 @@ function openUniParserTools() {
         </video>
       </div>
     </div>
-    <div class="hero__image", style="margin-top: 2rem; margin-left: 0rem; margin-bottom: 2rem;">
-      <h3 style="margin-top: 2rem; text-align: left; font-size: 1.25rem; font-weight: bold;">
-      <el-button v-if="locale === 'zh'" class="hover-lift" style="margin-right: 1rem;" size="large" v-tilt @click="openForm('zh')">{{ t('hero.join_waiting_list_zh') }}</el-button>
-      <el-button v-if="locale === 'en'" class="hover-lift" style="margin-right: 1rem;" size="large" v-tilt @click="openForm('en')">{{ t('hero.join_waiting_list_en') }}</el-button>
-        {{ t('hero.tools_description') }} <span style="color: rgba(66, 126, 234, 1.0); text-decoration: underline; cursor: pointer;" @click="openUniParserTools()"> Uni-Parser Tools </span>(Coming Soon)</h3>
+    <div class="hero__actions" v-reveal="{ animation: 'fade-up' }">
+      <el-button class="hero__btn hero__btn--primary hover-lift" size="large" v-tilt @click="openHomepage">{{ t('hero.visit_homepage') }}</el-button>
+      <el-button class="hero__btn hero__btn--primary hover-lift" size="large" v-tilt @click="openWrapperTools">{{ t('hero.visit_wrapper_tools') }}</el-button>
+      <el-button class="hero__btn hero__btn--primary hover-lift" size="large" v-tilt @click="openForm">{{ t('hero.academic_cooperation') }}</el-button>
     </div>
-
-    <!-- <div class="hero__cta">
-      <el-button v-if="locale === 'zh'" class="hover-lift" size="middle" v-tilt @click="openForm('zh')">{{ t('hero.join_waiting_list_zh') }}</el-button>
-      <el-button v-if="locale === 'en'" class="hover-lift" size="middle" v-tilt @click="openForm('en')">{{ t('hero.join_waiting_list_en') }}</el-button>
-    </div> -->
   </section>
 </template>
 
@@ -81,7 +73,7 @@ function openUniParserTools() {
   margin-bottom: 1.5rem;
   font-weight: 700;
   line-height: 1.3;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -111,33 +103,35 @@ function openUniParserTools() {
   font-size: 1rem;
 }
 
-.hero__cta {
+.hero__actions {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  /* flex-wrap: wrap; */
 }
 
-.hero__image .el-button {
-  /* padding: 0.875rem 2rem; */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+.hero__btn {
+  height: auto;
+  padding: 0.875rem 1.75rem;
   border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.25rem;
+  font-weight: 600;
+  font-size: 1.05rem;
   transition: all 0.3s ease;
-  border: none;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  backdrop-filter: blur(10px);
-  color: #ffffff;
-  /* text-decoration: underline; */
 }
 
-.hero__image .el-button:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.hero__btn--primary {
+  border: none;
+  background: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+.hero__btn--primary:hover {
+  background: #1e293b;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  border: none;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.3);
 }
 
 .hero__image {
@@ -174,7 +168,7 @@ function openUniParserTools() {
     padding-left: 2rem;
   }
 
-  .hero__cta {
+  .hero__actions {
     justify-content: center;
   }
 
@@ -191,12 +185,12 @@ function openUniParserTools() {
     font-size: 1.8rem;
   }
 
-  .hero__cta {
+  .hero__actions {
     flex-direction: column;
     align-items: center;
   }
 
-  .hero__cta .el-button {
+  .hero__btn {
     width: 100%;
     max-width: 280px;
   }

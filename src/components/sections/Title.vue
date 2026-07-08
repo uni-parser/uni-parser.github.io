@@ -17,6 +17,9 @@ import blueImg from '@/assets/small_images/icon_blue.png'
 
 const { t } = useI18n()
 
+// Uni-Parser 主页链接
+const homepageLink = 'https://uniparser.dp.tech/'
+
 // logo地址，没有则置为""即可
 const logo = projectLogo
 
@@ -170,7 +173,12 @@ const buttons = [
 
     <!-- 最新消息提示 -->
     <div class="title-alert">
-      <el-alert :title="t('title.news')" type="success" />
+      <el-alert type="success" :closable="false">
+        <template #title>
+          <span>{{ t('title.news') }}</span>
+          <a :href="homepageLink" target="_blank" rel="noopener noreferrer" class="news-link">{{ t('title.news_link') }}</a>
+        </template>
+      </el-alert>
     </div>
 
     <!-- 文章标题 -->
@@ -259,7 +267,7 @@ const buttons = [
   text-align: center;
   line-height: 1.2;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -280,7 +288,7 @@ const buttons = [
 
 .title-button:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
   background: rgba(255, 255, 255, 0.95);
 }
 
@@ -290,15 +298,15 @@ const buttons = [
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  background: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
   border: none;
 }
 
 .guidance-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.35);
+  background: #1e293b;
 }
 
 /* Author and address text */
@@ -310,7 +318,7 @@ const buttons = [
 }
 
 .name_sup, .address_sup {
-  color: #667eea;
+  color: #2563eb;
   font-weight: 600;
   margin: 0 0.25rem;
 }
@@ -338,15 +346,15 @@ const buttons = [
 
 /* Emphasis styling */
 .emphasis {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  color: #667eea;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(15, 23, 42, 0.06) 100%);
+  color: #2563eb;
   font-weight: 600;
   margin: 0rem 0;
   font-size: 1.25rem;
   text-align: center;
   padding: 0.5rem 2rem;
   border-radius: 12px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #2563eb;
 }
 
 /* Button text */
@@ -382,12 +390,18 @@ const buttons = [
   margin: 0;
   border-radius: 8px;
   border: none;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  color: #667eea;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(15, 23, 42, 0.06) 100%);
+  color: #2563eb;
 }
 
 .el-alert .el-alert__title {
   font-weight: 600;
+}
+
+.news-link {
+  margin-left: 0.75rem;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 /* Logo styling */
@@ -421,7 +435,7 @@ a:-webkit-any-link {
 }
 
 a:hover {
-  color: #764ba2;
+  color: #1d4ed8;
   border-bottom: none;
   text-decoration: none;
 }
